@@ -1,12 +1,12 @@
 module ALU (
 
-    input reg [31:0] A, B,
+    input  wire  [31:0] A, B,
 
-    input reg [2:0] ALU_FUNC,
+    input  wire  [2:0] ALU_FUNC,
 
-    output reg [31:0] ALU_OUT,
+    output reg   [31:0] ALU_OUT,
 
-    output wire Zero_Flag
+    output wire  Zero_Flag
 );
 
 // Any number write it in the following format : (number of bits)'b(value in binary)

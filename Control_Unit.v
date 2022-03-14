@@ -1,15 +1,15 @@
 module Control_Unit (  
-   output wire          Jump_C,
-   output wire          MemtoReg_C,   
-   output wire          MemWrite_C,
-   output wire          Branch_C,
-   output wire          ALUSrc_C,
-   output wire          RegDst_C,
-   output wire          RegWrite_C,
-   output wire   [2:0]  ALUControl_C,
+   output wire           Jump_C,
+   output wire           MemtoReg_C,   
+   output wire           MemWrite_C,
+   output wire           Branch_C,
+   output wire           ALUSrc_C,
+   output wire           RegDst_C,
+   output wire           RegWrite_C,
+   output wire    [2:0]  ALUControl_C,
 
-   input reg    [5:0]  Opcode_C,
-   input reg    [5:0]  Funct_C
+   input wire     [5:0]  Opcode_C,
+   input wire     [5:0]  Funct_C
 );
 
 // Intermediate Signals:
@@ -20,7 +20,7 @@ wire [1:0] ALUOp_D;
 // ALU Decoder:
 
 ALU_Decoder AD (
-    .ALUOp (MD.ALUOp),
+    .ALUOp (ALUOp_D),
     .Funct (Funct_C),
 
     .ALUControl (ALUControl_C)
